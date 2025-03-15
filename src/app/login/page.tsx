@@ -1,4 +1,4 @@
-import { signIn } from "@/lib/auth"
+import { auth, signIn } from "@/lib/auth"
 import {
   Card,
   CardContent,
@@ -9,11 +9,10 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SubmitButtton } from "@/components/ui/SubmitButtton"
-import { requireUser } from "@/lib/hooks"
 import { redirect } from "next/navigation"
 
 export default async function LoginPage() {
-  const session = await requireUser()
+  const session = await auth()
 
   if (session) {
     redirect("/dashboard")
