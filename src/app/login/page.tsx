@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { SubmitButtton } from "@/components/ui/SubmitButtton"
+import { SubmitButtton } from "@/components/SubmitButtton"
 import { redirect } from "next/navigation"
 
 export default async function LoginPage() {
