@@ -3,7 +3,11 @@ import { useFormStatus } from "react-dom"
 import { Button } from "./ui/button"
 import { Loader2 } from "lucide-react"
 
-export function SubmitButtton() {
+type Props = {
+  text: string
+}
+
+export function SubmitButtton({ text }: Props) {
   const { pending } = useFormStatus()
   return (
     <>
@@ -13,7 +17,7 @@ export function SubmitButtton() {
         </Button>
       ) : (
         <Button type="submit" className="w-full">
-          Submit
+          {text}
         </Button>
       )}
     </>
