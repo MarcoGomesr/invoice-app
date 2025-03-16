@@ -1,4 +1,4 @@
-import DashboardLinks from "@/components/DashboardLinks"
+import DashboardLinks from "./DashboardLinks"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -10,10 +10,29 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { signOut } from "@/lib/auth"
+import { prisma } from "@/lib/db"
 import { requireUser } from "@/lib/hooks"
 import { HandCoins, Menu, User2 } from "lucide-react"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 import { ReactNode } from "react"
+
+async function getUser(userId: string) {
+  const data = await prisma.user.findUnique({
+    where: {
+      id: userId
+    },
+    select: {
+      firstName: true,
+      lastName: true,
+      address: true
+    }
+  })
+
+  if (!data?.firstName || !data.lastName || !data.address) {
+    redirect("/onboarding")
+  }
+}
 
 export default async function DashboardLayout({
   children
@@ -21,6 +40,7 @@ export default async function DashboardLayout({
   children: ReactNode
 }) {
   const session = await requireUser()
+  const data = await getUser(session.user?.id as string)
 
   return (
     <>
@@ -96,7 +116,9 @@ export default async function DashboardLayout({
               </DropdownMenu>
             </div>
           </header>
-          <main className="flex flex-1 flex-col gap-4">hello</main>
+          <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+            {children}
+          </main>
         </div>
       </div>
     </>
