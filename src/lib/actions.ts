@@ -30,7 +30,7 @@ export async function onboardUser(prevState: any, formData: FormData) {
   return redirect("/dashboard")
 }
 
-export async function createInvoice(prevState: any, FormData: FormData) {
+export async function createInvoiceAction(prevState: any, FormData: FormData) {
   const session = await requireUser()
 
   const submission = parseWithZod(FormData, {
@@ -60,7 +60,11 @@ export async function createInvoice(prevState: any, FormData: FormData) {
 
       invoiceItemDescription: submission.value.invoiceItemDescription,
       invoiceItemQuantity: submission.value.invoiceItemQuantity,
-      invoiceItemRate: submission.value.invoiceItemRate
+      invoiceItemRate: submission.value.invoiceItemRate,
+
+      userId: session.user?.id
     }
   })
+
+  return redirect("/dashboard/invoices")
 }
