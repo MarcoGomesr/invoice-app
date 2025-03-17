@@ -11,7 +11,7 @@ export const invoiceSchema = z.object({
   status: z.enum(["PAID", "PENDING"]).default("PENDING"),
   date: z.string().min(1, "Date is require"),
 
-  dueDate: z.number().min(1, "Due Date is require"),
+  dueDate: z.number().min(0, "Due Date is require"),
 
   fromName: z.string().min(1, "Your name is require"),
   fromEmail: z.string().email("Invalid email address"),
