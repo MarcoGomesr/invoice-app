@@ -29,7 +29,19 @@ import { parseWithZod } from "@conform-to/zod"
 import { invoiceSchema } from "@/lib/zodSchemas"
 import { formatCurrency } from "@/lib/utils"
 
-export default function CreateInvoice() {
+type CreateInvoiceProps = {
+  firstName: string
+  lastName: string
+  address: string
+  email: string
+}
+
+export default function CreateInvoice({
+  firstName,
+  lastName,
+  address,
+  email
+}: CreateInvoiceProps) {
   const [lastResult, action] = useActionState(createInvoiceAction, undefined)
 
   const [form, fields] = useForm({
@@ -136,6 +148,7 @@ export default function CreateInvoice() {
                   name={fields.fromName.name}
                   key={fields.fromName.key}
                   placeholder="Your Name"
+                  defaultValue={firstName + " " + lastName}
                 />
                 {fields.fromName.errors && (
                   <p className="text-sm text-red-500">
@@ -146,6 +159,7 @@ export default function CreateInvoice() {
                   name={fields.fromEmail.name}
                   key={fields.fromEmail.key}
                   placeholder="Your Email"
+                  defaultValue={email}
                 />
                 {fields.fromEmail.errors && (
                   <p className="text-sm text-red-500">
@@ -156,6 +170,7 @@ export default function CreateInvoice() {
                   name={fields.fromAddress.name}
                   key={fields.fromAddress.key}
                   placeholder="Your Address"
+                  defaultValue={address}
                 />
                 {fields.fromAddress.errors && (
                   <p className="text-sm text-red-500">
