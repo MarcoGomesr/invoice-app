@@ -1,3 +1,5 @@
+"use client"
+
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import {
   DropdownMenu,
@@ -14,8 +16,28 @@ import {
   Trash
 } from "lucide-react"
 import Link from "next/link"
+import { toast } from "sonner"
 
-export function InvoiceActions() {
+type InvoiceActionsProps = {
+  id: string
+}
+
+export function InvoiceActions({ id }: InvoiceActionsProps) {
+  const habdleSendReminder = () => {
+    toast.promise(
+      fetch(`/api/email/${id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }),
+      {
+        loading: "Sending reminder...",
+        success: "Reminder email sent successfully",
+        error: "Failed to send reminder email"
+      }
+    )
+  }
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,24 +47,22 @@ export function InvoiceActions() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>
-          <Link href="">
+          <Link href={`/dashboard/invoices/${id}`}>
             <PencilIcon className="mr-2 size-4" />
             Edit Invoice
           </Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
-          <Link href="">
+          <Link href={`/api/invoice/${id}`} target="_blank">
             <DownloadIcon className="mr-2 size-4" />
             Download Invoice
           </Link>
         </DropdownMenuItem>
 
-        <DropdownMenuItem asChild>
-          <Link href="">
-            <Mail className="mr-2 size-4" />
-            Reminder Email
-          </Link>
+        <DropdownMenuItem onClick={habdleSendReminder}>
+          <Mail className="mr-2 size-4" />
+          Reminder Email
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>

@@ -16,6 +16,7 @@ import { HandCoins, Menu, User2 } from "lucide-react"
 import Link from "next/link"
 import { redirect } from "next/navigation"
 import { ReactNode } from "react"
+import { Toaster } from "sonner"
 
 async function getUser(userId: string) {
   const data = await prisma.user.findUnique({
@@ -121,6 +122,7 @@ export default async function DashboardLayout({
           </main>
         </div>
       </div>
+      <Toaster richColors closeButton theme="light" />
     </>
   )
 }
