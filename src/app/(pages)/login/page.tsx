@@ -41,10 +41,10 @@ export default async function LoginPage() {
                   <div className="flex flex-col gap-y-2">
                     <Label htmlFor="email">Email</Label>
                     <Input
-                      name="email"
-                      type="email"
                       id="email"
+                      name="email"
                       placeholder="hello@hello.com"
+                      type="email"
                     />
                   </div>
                 </div>

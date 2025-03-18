@@ -41,7 +41,7 @@ export default async function DashboardLayout({
   children: ReactNode
 }) {
   const session = await requireUser()
-  const data = await getUser(session.user?.id as string)
+  await getUser(session.user?.id as string)
 
   return (
     <>
@@ -49,7 +49,7 @@ export default async function DashboardLayout({
         <aside className="bg-muted/40 hidden border-r md:block">
           <div className="flex h-full max-h-screen flex-col gap-2">
             <div className="flex h-14 items-center border-b px-4 lg:h-[60px]">
-              <Link href="/" className="flex items-center gap-2">
+              <Link className="flex items-center gap-2" href="/">
                 <HandCoins className="size-7 rounded-md bg-blue-500 p-1 text-white" />{" "}
                 <p className="text-xl font-bold">
                   Invoice <span className="text-blue-500">Marco</span>
@@ -68,7 +68,7 @@ export default async function DashboardLayout({
           <header className="bg-muted/40 flex h-14 items-center gap-4 border-b px-4 lg:h-[60px] lg:px-6">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden">
+                <Button className="md:hidden" size="icon" variant="outline">
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
@@ -84,8 +84,8 @@ export default async function DashboardLayout({
                 <DropdownMenuTrigger asChild>
                   <Button
                     className="rounded-full"
-                    variant="outline"
                     size="icon"
+                    variant="outline"
                   >
                     <User2 />
                   </Button>
@@ -104,11 +104,11 @@ export default async function DashboardLayout({
 
                   <DropdownMenuItem asChild>
                     <form
-                      className="w-full"
                       action={async () => {
                         "use server"
                         await signOut()
                       }}
+                      className="w-full"
                     >
                       <button className="w-full text-left">Log out</button>
                     </form>
@@ -122,7 +122,7 @@ export default async function DashboardLayout({
           </main>
         </div>
       </div>
-      <Toaster richColors closeButton theme="light" />
+      <Toaster closeButton richColors theme="light" />
     </>
   )
 }

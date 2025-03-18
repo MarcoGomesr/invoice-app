@@ -22,7 +22,7 @@ export default function InvoicesPage() {
             <CardTitle className="text-2xl font-bold">Invoices</CardTitle>
             <CardDescription>Manage your invoices</CardDescription>
           </div>
-          <Link href="/dashboard/invoices/create" className={buttonVariants()}>
+          <Link className={buttonVariants()} href="/dashboard/invoices/create">
             <PlusIcon /> Create invoice
           </Link>
         </div>

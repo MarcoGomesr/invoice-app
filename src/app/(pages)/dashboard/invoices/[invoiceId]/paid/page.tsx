@@ -46,12 +46,12 @@ export default async function PaidPage({ params }: { params: Params }) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Image src={PaidGif} alt="paid day" className="rounded-lg" />
+          <Image alt="paid day" className="rounded-lg" src={PaidGif} />
         </CardContent>
         <CardFooter className="flex items-center justify-between">
           <Link
-            href="/dashboard/invoices"
             className={buttonVariants({ variant: "outline" })}
+            href="/dashboard/invoices"
           >
             Cancel
           </Link>

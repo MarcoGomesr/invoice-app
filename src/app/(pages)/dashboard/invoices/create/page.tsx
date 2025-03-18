@@ -21,10 +21,10 @@ export default async function InvoiceCreatePage() {
   const data = await getUserData(session?.user?.id as string)
   return (
     <CreateInvoice
-      firstName={data?.firstName as string}
-      lastName={data?.lastName as string}
       address={data?.address as string}
       email={data?.email as string}
+      firstName={data?.firstName as string}
+      lastName={data?.lastName as string}
     />
   )
 }

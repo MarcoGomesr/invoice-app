@@ -17,24 +17,24 @@ type graphProps = {
 export function Graph({ data }: graphProps) {
   return (
     <ChartContainer
+      className="min-h-[300px]"
       config={{
         amount: {
           label: "Amount",
           color: "hsl(var(--primary))"
         }
       }}
-      className="min-h-[300px]"
     >
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer height="100%" width="100%">
         <LineChart data={data}>
           <XAxis dataKey="date" />
           <YAxis />
           <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
           <Line
-            type="monotone"
             dataKey="amount"
             stroke="var(--primary)"
             strokeWidth={2}
+            type="monotone"
           />
         </LineChart>
       </ResponsiveContainer>

@@ -32,10 +32,10 @@ export default function Hero() {
       <div className="relative mx-auto mt-12 w-full items-center py-12">
         <svg
           className="absolute inset-0 -mt-24 blur-3xl"
-          style={{ zIndex: -1 }}
           fill="none"
-          viewBox="0 0 400 400"
           height="100%"
+          style={{ zIndex: -1 }}
+          viewBox="0 0 400 400"
           width="100%"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -84,9 +84,9 @@ export default function Hero() {
           </defs>
         </svg>
         <Image
-          src={HeroImage}
           alt="Hero image"
           className="relative w-full rounded-lg border object-cover shadow-2xl lg:rounded-2xl"
+          src={HeroImage}
         />
       </div>
     </section>

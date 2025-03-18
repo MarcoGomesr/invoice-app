@@ -60,26 +60,26 @@ export default function EditInvoice({ data }: editInvoiceProps) {
   return (
     <Card className="mx-auto w-full max-w-4xl">
       <CardContent className="p-6">
-        <form id={form.id} action={action} onSubmit={form.onSubmit} noValidate>
+        <form noValidate action={action} id={form.id} onSubmit={form.onSubmit}>
           <input
-            type="hidden"
             name={fields.date.name}
+            type="hidden"
             value={selectedDate.toISOString()}
           />
           <input
-            type="hidden"
             name={fields.total.name}
+            type="hidden"
             value={calculateTotal}
           />
-          <input type="hidden" name="id" value={data.id} />
+          <input name="id" type="hidden" value={data.id} />
 
           <div className="mb-6 flex w-fit flex-col gap-1">
             <div className="flex items-center gap-4">
               <Badge variant="secondary">Draft</Badge>
               <Input
-                name={fields.invoiceName.name}
-                key={fields.invoiceName.key}
                 defaultValue={data.invoiceName}
+                key={fields.invoiceName.key}
+                name={fields.invoiceName.name}
                 placeholder="Test 123"
               />
             </div>
@@ -99,10 +99,10 @@ export default function EditInvoice({ data }: editInvoiceProps) {
                 </span>
                 <Input
                   className="rounded-l-none"
-                  placeholder="5"
-                  name={fields.invoiceNumber.name}
-                  key={fields.invoiceNumber.key}
                   defaultValue={data.invoiceNumber}
+                  key={fields.invoiceNumber.key}
+                  name={fields.invoiceNumber.name}
+                  placeholder="5"
                 />
               </div>
               {fields.invoiceNumber.errors && (
@@ -116,8 +116,8 @@ export default function EditInvoice({ data }: editInvoiceProps) {
               <Label className="mb-2">Currency</Label>
               <Select
                 defaultValue={currency}
-                name={fields.currency.name}
                 key={fields.currency.key}
+                name={fields.currency.name}
                 onValueChange={(value) => setCurrency(value)}
               >
                 <SelectTrigger>
@@ -141,10 +141,10 @@ export default function EditInvoice({ data }: editInvoiceProps) {
               <Label>From</Label>
               <div className="space-y-2">
                 <Input
-                  name={fields.fromName.name}
-                  key={fields.fromName.key}
-                  placeholder="Your Name"
                   defaultValue={data.fromName}
+                  key={fields.fromName.key}
+                  name={fields.fromName.name}
+                  placeholder="Your Name"
                 />
                 {fields.fromName.errors && (
                   <p className="text-sm text-red-500">
@@ -152,10 +152,10 @@ export default function EditInvoice({ data }: editInvoiceProps) {
                   </p>
                 )}
                 <Input
-                  name={fields.fromEmail.name}
-                  key={fields.fromEmail.key}
-                  placeholder="Your Email"
                   defaultValue={data.fromEmail}
+                  key={fields.fromEmail.key}
+                  name={fields.fromEmail.name}
+                  placeholder="Your Email"
                 />
                 {fields.fromEmail.errors && (
                   <p className="text-sm text-red-500">
@@ -163,10 +163,10 @@ export default function EditInvoice({ data }: editInvoiceProps) {
                   </p>
                 )}
                 <Input
-                  name={fields.fromAddress.name}
-                  key={fields.fromAddress.key}
-                  placeholder="Your Address"
                   defaultValue={data.fromAddress}
+                  key={fields.fromAddress.key}
+                  name={fields.fromAddress.name}
+                  placeholder="Your Address"
                 />
                 {fields.fromAddress.errors && (
                   <p className="text-sm text-red-500">
@@ -179,9 +179,9 @@ export default function EditInvoice({ data }: editInvoiceProps) {
               <Label>To</Label>
               <div className="space-y-2">
                 <Input
-                  name={fields.clientName.name}
-                  key={fields.clientName.key}
                   defaultValue={data.clientName}
+                  key={fields.clientName.key}
+                  name={fields.clientName.name}
                   placeholder="Client Name"
                 />
                 {fields.clientName.errors && (
@@ -190,9 +190,9 @@ export default function EditInvoice({ data }: editInvoiceProps) {
                   </p>
                 )}
                 <Input
-                  name={fields.clientEmail.name}
-                  key={fields.clientEmail.key}
                   defaultValue={data.clientEmail}
+                  key={fields.clientEmail.key}
+                  name={fields.clientEmail.name}
                   placeholder="Client Email"
                 />
                 {fields.clientEmail.errors && (
@@ -201,9 +201,9 @@ export default function EditInvoice({ data }: editInvoiceProps) {
                   </p>
                 )}
                 <Input
-                  name={fields.clientAddress.name}
-                  key={fields.clientAddress.key}
                   defaultValue={data.clientAddress}
+                  key={fields.clientAddress.key}
+                  name={fields.clientAddress.name}
                   placeholder="Client Address"
                 />
                 {fields.clientAddress.errors && (
@@ -220,7 +220,7 @@ export default function EditInvoice({ data }: editInvoiceProps) {
               <Label>Date</Label>
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" className="w-[280px] justify-start">
+                  <Button className="w-[280px] justify-start" variant="outline">
                     <CalendarIcon />
                     {selectedDate ? (
                       new Intl.DateTimeFormat("en-US", {
@@ -233,10 +233,10 @@ export default function EditInvoice({ data }: editInvoiceProps) {
                 </PopoverTrigger>
                 <PopoverContent>
                   <Calendar
+                    fromDate={new Date()}
                     mode="single"
                     selected={selectedDate}
                     onSelect={(date) => setSelectedDate(date || new Date())}
-                    fromDate={new Date()}
                   />
                 </PopoverContent>
               </Popover>
@@ -247,9 +247,9 @@ export default function EditInvoice({ data }: editInvoiceProps) {
             <div className="grid gap-2">
               <Label>Invoice Due</Label>
               <Select
-                name={fields.dueDate.name}
-                key={fields.dueDate.key}
                 defaultValue={data.dueDate.toString()}
+                key={fields.dueDate.key}
+                name={fields.dueDate.name}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select due date" />
@@ -273,9 +273,9 @@ export default function EditInvoice({ data }: editInvoiceProps) {
             <div className="mb-4 grid grid-cols-12 gap-4">
               <div className="col-span-6">
                 <Textarea
-                  name={fields.invoiceItemDescription.name}
-                  key={fields.invoiceItemDescription.key}
                   defaultValue={data.invoiceItemDescription}
+                  key={fields.invoiceItemDescription.key}
+                  name={fields.invoiceItemDescription.name}
                   placeholder="Item name & description"
                 />
                 {fields.invoiceItemDescription.errors && (
@@ -286,11 +286,11 @@ export default function EditInvoice({ data }: editInvoiceProps) {
               </div>
               <div className="col-span-2">
                 <Input
-                  name={fields.invoiceItemQuantity.name}
-                  key={fields.invoiceItemQuantity.key}
                   defaultValue={fields.invoiceItemQuantity.initialValue}
-                  type="number"
+                  key={fields.invoiceItemQuantity.key}
+                  name={fields.invoiceItemQuantity.name}
                   placeholder="0"
+                  type="number"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                 />
@@ -303,10 +303,10 @@ export default function EditInvoice({ data }: editInvoiceProps) {
 
               <div className="col-span-2">
                 <Input
-                  name={fields.invoiceItemRate.name}
                   key={fields.invoiceItemRate.key}
-                  type="number"
+                  name={fields.invoiceItemRate.name}
                   placeholder="0"
+                  type="number"
                   value={rate}
                   onChange={(e) => setRate(e.target.value)}
                 />
@@ -319,12 +319,12 @@ export default function EditInvoice({ data }: editInvoiceProps) {
 
               <div className="col-span-2">
                 <Input
+                  disabled
+                  placeholder="0"
                   value={formatCurrency({
                     amount: calculateTotal,
                     currency: currency as any
                   })}
-                  placeholder="0"
-                  disabled
                 />
               </div>
             </div>
@@ -356,9 +356,9 @@ export default function EditInvoice({ data }: editInvoiceProps) {
           <div>
             <Label className="mb-2">Note</Label>
             <Textarea
-              name={fields.note.name}
-              key={fields.note.key}
               defaultValue={data.note ?? undefined}
+              key={fields.note.key}
+              name={fields.note.name}
               placeholder="Add your Notes right here..."
             />
           </div>

@@ -24,7 +24,7 @@ export function EmptyState({
       <p className="text-muted-foreground mx-auto mt-2 mb-8 max-w-sm text-sm">
         {description}
       </p>
-      <Link href={href} className={buttonVariants()}>
+      <Link className={buttonVariants()} href={href}>
         <PlusCircle className="mr-2 size-4" /> {buttonText}
       </Link>
     </div>

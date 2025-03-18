@@ -42,10 +42,10 @@ export default async function InvoiceList() {
     <>
       {data.length === 0 ? (
         <EmptyState
-          title="No invoices found"
-          description="Create an invoices to get stated "
           buttonText="Create invoice"
+          description="Create an invoices to get stated "
           href="/dashboard/invoices/create"
+          title="No invoices found"
         />
       ) : (
         <Table>
@@ -79,7 +79,7 @@ export default async function InvoiceList() {
                   }).format(invoice.createdAt)}
                 </TableCell>
                 <TableCell className="text-right">
-                  <InvoiceActions status={invoice.status} id={invoice.id} />
+                  <InvoiceActions id={invoice.id} status={invoice.status} />
                 </TableCell>
               </TableRow>
             ))}

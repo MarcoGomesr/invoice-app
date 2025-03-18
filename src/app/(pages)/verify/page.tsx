@@ -39,11 +39,11 @@ export default function Verify() {
             </CardContent>
             <CardFooter>
               <Link
-                href="/"
                 className={buttonVariants({
                   className: "w-full",
                   variant: "outline"
                 })}
+                href="/"
               >
                 <ArrowLeft className="mr-2 size-4" /> Back to Homepage
               </Link>

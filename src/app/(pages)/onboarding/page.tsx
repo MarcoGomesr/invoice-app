@@ -44,19 +44,19 @@ export default function Onboarding() {
 
             <CardContent>
               <form
-                className="grid gap-4"
+                noValidate
                 action={action}
+                className="grid gap-4"
                 id={form.id}
                 onSubmit={form.onSubmit}
-                noValidate
               >
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <Label htmlFor="firstName">First Name</Label>
                     <Input
+                      defaultValue={fields.firstName.initialValue}
                       id={fields.firstName.key}
                       name={fields.firstName.name}
-                      defaultValue={fields.firstName.initialValue}
                       placeholder="john"
                     />
                     <p className="text-red-500">{fields.firstName.errors}</p>
@@ -65,9 +65,9 @@ export default function Onboarding() {
                   <div className="flex flex-col gap-2">
                     <Label htmlFor="lastName">Last Name</Label>
                     <Input
+                      defaultValue={fields.lastName.initialValue}
                       id={fields.lastName.key}
                       name={fields.lastName.name}
-                      defaultValue={fields.lastName.initialValue}
                       placeholder="Doe"
                     />
                     <p className="text-red-500">{fields.lastName.errors}</p>
@@ -77,9 +77,9 @@ export default function Onboarding() {
                 <div className="grid gap-2">
                   <Label htmlFor="address">Address</Label>
                   <Input
-                    name={fields.address.name}
-                    key={fields.address.key}
                     defaultValue={fields.address.initialValue}
+                    key={fields.address.key}
+                    name={fields.address.name}
                     placeholder="Chad Street"
                   />
                   <p className="text-red-500">{fields.address.errors}</p>

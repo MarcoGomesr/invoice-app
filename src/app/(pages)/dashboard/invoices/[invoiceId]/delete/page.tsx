@@ -49,12 +49,12 @@ export default async function DeleteInvoicePage({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Image src={WarningGif} alt="Warning gif" className="rounded-lg" />
+          <Image alt="Warning gif" className="rounded-lg" src={WarningGif} />
         </CardContent>
         <CardFooter className="flex items-center justify-between">
           <Link
-            href="/dashboard/invoices"
             className={buttonVariants({ variant: "secondary" })}
+            href="/dashboard/invoices"
           >
             Cancel
           </Link>
@@ -64,7 +64,7 @@ export default async function DeleteInvoicePage({
               await DeleteInvoice(invoiceId)
             }}
           >
-            <SubmitButtton variant="destructive" text="Delete Invoice" />
+            <SubmitButtton text="Delete Invoice" variant="destructive" />
           </form>
         </CardFooter>
       </Card>

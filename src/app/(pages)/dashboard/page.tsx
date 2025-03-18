@@ -1,4 +1,3 @@
-import { signOut } from "@/lib/auth"
 import { requireUser } from "@/lib/hooks"
 import Blocks from "./components/blocks"
 import InvoiceGraph from "@/app/(pages)/dashboard/components/InvoiceGraph"
@@ -26,10 +25,10 @@ export default async function DashboardPage() {
     <>
       {data.length < 1 ? (
         <EmptyState
-          title="No invoices found"
-          description="Create an invoice to see it"
           buttonText="Create invoice"
+          description="Create an invoice to see it"
           href="/dashboard/invoices/create"
+          title="No invoices found"
         />
       ) : (
         <Suspense fallback={<Skeleton className="h-full w-full flex-1" />}>
