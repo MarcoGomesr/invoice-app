@@ -90,7 +90,7 @@ export async function createInvoiceAction(prevState: any, FormData: FormData) {
       invoiceLink:
         process.env.NODE_ENV !== "production"
           ? `http://localhost:3000/api/invoice/${data.id}`
-          : `http://localhost:3000/api/invoice/${data.id}`
+          : `https://invoice-emfvoxz6c-marcogomesrs-projects.vercel.app/api/invoice/${data.id}`
     }
   })
 
