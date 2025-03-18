@@ -1,4 +1,4 @@
-import DashboardLinks from "./DashboardLinks"
+import DashboardLinks from "./components/DashboardLinks"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,

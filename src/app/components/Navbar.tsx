@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { HandCoins } from "lucide-react"
-import { RainbowButton } from "./magicui/rainbow-button"
+import { RainbowButton } from "@/components/ui/magicui/rainbow-button"
 
-export function Navbar() {
+export default function Navbar() {
   return (
     <div className="flex items-center justify-between py-5">
       <Link href="/" className="flex items-center gap-2">

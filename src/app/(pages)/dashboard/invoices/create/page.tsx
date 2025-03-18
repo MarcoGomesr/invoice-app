@@ -1,4 +1,4 @@
-import CreateInvoice from "@/app/dashboard/invoices/create/CreateInvoice"
+import CreateInvoice from "@/app/(pages)/dashboard/invoices/create/CreateInvoice"
 import { prisma } from "@/lib/db"
 import { requireUser } from "@/lib/hooks"
 
