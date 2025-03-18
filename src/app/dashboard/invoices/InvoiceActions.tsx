@@ -17,12 +17,14 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { toast } from "sonner"
+import { InvoiceStatus } from "@prisma/client"
 
 type InvoiceActionsProps = {
   id: string
+  status: InvoiceStatus
 }
 
-export function InvoiceActions({ id }: InvoiceActionsProps) {
+export function InvoiceActions({ id, status }: InvoiceActionsProps) {
   const habdleSendReminder = () => {
     toast.promise(
       fetch(`/api/email/${id}`, {
@@ -71,12 +73,15 @@ export function InvoiceActions({ id }: InvoiceActionsProps) {
             Delete Invoice
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="">
-            <CheckCircle className="mr-2 size-4" />
-            Mark as Paid
-          </Link>
-        </DropdownMenuItem>
+
+        {status !== InvoiceStatus.PAID && (
+          <DropdownMenuItem asChild>
+            <Link href={`/dashboard/invoices/${id}/paid`}>
+              <CheckCircle className="mr-2 size-4" />
+              Mark as Paid
+            </Link>
+          </DropdownMenuItem>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   )
