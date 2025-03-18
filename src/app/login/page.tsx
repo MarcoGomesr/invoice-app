@@ -19,39 +19,41 @@ export default async function LoginPage() {
   }
 
   return (
-    <>
-      <div className="flex h-screen w-full items-center justify-center px-4">
-        <Card className="w-[350px]">
-          <CardHeader>
-            <CardTitle className="text-2xl">Login</CardTitle>
-            <CardDescription>
-              Enter your email below to login to your account
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form
-              action={async (formData) => {
-                "use server"
-                await signIn("nodemailer", formData)
-              }}
-              className="flex flex-col gap-4"
-            >
-              <div className="space-y-4">
-                <div className="flex flex-col gap-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    name="email"
-                    type="email"
-                    id="email"
-                    placeholder="hello@hello.com"
-                  />
+    <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
+      <div className="absolute top-0 right-0 bottom-0 left-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]">
+        <div className="flex h-screen w-full items-center justify-center px-4">
+          <Card className="w-[350px]">
+            <CardHeader>
+              <CardTitle className="text-2xl">Login</CardTitle>
+              <CardDescription>
+                Enter your email below to login to your account
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form
+                action={async (formData) => {
+                  "use server"
+                  await signIn("nodemailer", formData)
+                }}
+                className="flex flex-col gap-4"
+              >
+                <div className="space-y-4">
+                  <div className="flex flex-col gap-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      name="email"
+                      type="email"
+                      id="email"
+                      placeholder="hello@hello.com"
+                    />
+                  </div>
                 </div>
-              </div>
-              <SubmitButtton text="Login" />
-            </form>
-          </CardContent>
-        </Card>
+                <SubmitButtton text="Login" />
+              </form>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
