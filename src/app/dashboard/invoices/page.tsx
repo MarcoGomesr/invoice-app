@@ -7,9 +7,11 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
 
 import { PlusIcon } from "lucide-react"
 import Link from "next/link"
+import { Suspense } from "react"
 
 export default function InvoicesPage() {
   return (
@@ -26,7 +28,9 @@ export default function InvoicesPage() {
         </div>
       </CardHeader>
       <CardContent>
-        <InvoiceList />
+        <Suspense fallback={<Skeleton className="w-full" />}>
+          <InvoiceList />
+        </Suspense>
       </CardContent>
     </Card>
   )
