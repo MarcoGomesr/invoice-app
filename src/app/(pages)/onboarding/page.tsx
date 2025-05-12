@@ -85,7 +85,7 @@ export default function Onboarding() {
                   <p className="text-red-500">{fields.address.errors}</p>
                 </div>
 
-                <SubmitButtton text="Finish onboarding" />
+                <SubmitButton text="Finish onboarding" />
               </form>
             </CardContent>
           </Card>

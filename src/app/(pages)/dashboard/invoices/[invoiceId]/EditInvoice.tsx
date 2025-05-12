@@ -365,7 +365,7 @@ export default function EditInvoice({ data }: editInvoiceProps) {
 
           <div className="mt-6 flex items-center justify-end">
             <div>
-              <SubmitButtton text="Update Invoice" />
+              <SubmitButton text="Update Invoice" />
             </div>
           </div>
         </form>

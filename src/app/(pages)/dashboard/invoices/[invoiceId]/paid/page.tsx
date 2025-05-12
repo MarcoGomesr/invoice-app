@@ -61,7 +61,7 @@ export default async function PaidPage({ params }: { params: Params }) {
               await PaidAction(invoiceId)
             }}
           >
-            <SubmitButtton text="Mark as Paid" />
+            <SubmitButton text="Mark as Paid" />
           </form>
         </CardFooter>
       </Card>

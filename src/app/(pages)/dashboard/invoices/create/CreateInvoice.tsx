@@ -369,7 +369,7 @@ export default function CreateInvoice({
 
           <div className="mt-6 flex items-center justify-end">
             <div>
-              <SubmitButtton text="Send Invoice to Client" />
+              <SubmitButton text="Send Invoice to Client" />
             </div>
           </div>
         </form>
