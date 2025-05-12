@@ -13,7 +13,7 @@ import { redirect } from "next/navigation"
 import WarningGif from "@public/warning-gif.gif"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
-import { SubmitButtton } from "@/components/SubmitButtton"
+import { SubmitButton } from "@/components/SubmitButton"
 import { DeleteInvoice } from "./deleteAction"
 
 async function Authorize(invoiceId: string, userId: string) {

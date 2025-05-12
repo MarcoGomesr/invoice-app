@@ -18,7 +18,7 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { SubmitButtton } from "@/components/SubmitButtton"
+import { SubmitButton } from "@/components/SubmitButton"
 
 import { CalendarIcon } from "lucide-react"
 import { formatCurrency } from "@/lib/utils"

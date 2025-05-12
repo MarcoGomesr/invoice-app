@@ -22,7 +22,7 @@ import {
 
 import { CalendarIcon } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
-import { SubmitButtton } from "@/components/SubmitButtton"
+import { SubmitButton } from "@/components/SubmitButton"
 import { createInvoiceAction } from "@/lib/actions"
 import { useForm } from "@conform-to/react"
 import { parseWithZod } from "@conform-to/zod"

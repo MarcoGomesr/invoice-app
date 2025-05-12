@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { SubmitButtton } from "@/components/SubmitButtton"
+import { SubmitButton } from "@/components/SubmitButton"
 import { redirect } from "next/navigation"
 
 export default async function LoginPage() {
@@ -31,24 +31,12 @@ export default async function LoginPage() {
             </CardHeader>
             <CardContent>
               <form
-                action={async (formData) => {
+                action={async () => {
                   "use server"
-                  await signIn("nodemailer", formData)
+                  await signIn("github")
                 }}
-                className="flex flex-col gap-4"
               >
-                <div className="space-y-4">
-                  <div className="flex flex-col gap-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      placeholder="hello@hello.com"
-                      type="email"
-                    />
-                  </div>
-                </div>
-                <SubmitButtton text="Login" />
+                <SubmitButton text="Login with google" />
               </form>
             </CardContent>
           </Card>

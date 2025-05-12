@@ -16,7 +16,7 @@ type Props = {
     | undefined
 }
 
-export function SubmitButtton({ text, variant }: Props) {
+export function SubmitButton({ text, variant }: Props) {
   const { pending } = useFormStatus()
   return (
     <>
