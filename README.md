@@ -31,13 +31,14 @@ InvoiceMarco is a modern, full-stack invoice management application built with N
 - **Icons:** Lucide React
 - **Charts:** Recharts
 - **Notifications:** Sonner
+- **Code Quality:** Biome (Linting & Formatting)
 
 ## 🏁 Getting Started
 
 1. Clone the repository
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Set up your environment variables:
@@ -47,18 +48,20 @@ cp .env.example .env.local
 
 4. Run the development server:
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 🔧 Development
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run postinstall` - Generate Prisma client
+- `pnpm dev` - Start development server with Turbopack
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run Biome linter
+- `pnpm format` - Format code with Biome
+- `pnpm check` - Run Biome check and apply fixes
+- `pnpm postinstall` - Generate Prisma client
 
 ## 📚 Documentation
 
@@ -66,6 +69,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Prisma Documentation](https://www.prisma.io/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Biome Documentation](https://biomejs.dev/docs)
 
 ## 🚀 Deployment
 
