@@ -1,3 +1,5 @@
+import { SubmitButton } from "@/components/SubmitButton"
+import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,12 +10,10 @@ import {
 } from "@/components/ui/card"
 import { prisma } from "@/lib/db"
 import { requireUser } from "@/lib/hooks"
-import Image from "next/image"
-import { redirect } from "next/navigation"
 import WarningGif from "@public/warning-gif.gif"
+import Image from "next/image"
 import Link from "next/link"
-import { buttonVariants } from "@/components/ui/button"
-import { SubmitButton } from "@/components/SubmitButton"
+import { redirect } from "next/navigation"
 import { DeleteInvoice } from "./deleteAction"
 
 async function Authorize(invoiceId: string, userId: string) {

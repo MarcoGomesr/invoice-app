@@ -1,3 +1,5 @@
+import { SubmitButton } from "@/components/SubmitButton"
+import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -6,15 +8,13 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
-import Image from "next/image"
-import PaidGif from "@public/paid-gif.gif"
-import Link from "next/link"
-import { buttonVariants } from "@/components/ui/button"
-import { SubmitButton } from "@/components/SubmitButton"
-import { PaidAction } from "./paidAction"
 import { prisma } from "@/lib/db"
-import { redirect } from "next/navigation"
 import { requireUser } from "@/lib/hooks"
+import PaidGif from "@public/paid-gif.gif"
+import Image from "next/image"
+import Link from "next/link"
+import { redirect } from "next/navigation"
+import { PaidAction } from "./paidAction"
 
 async function Authorize(invoiceId: string, userId: string) {
   const data = await prisma.invoice.findUnique({

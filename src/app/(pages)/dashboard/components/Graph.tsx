@@ -1,11 +1,11 @@
 "use client"
 
-import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent
 } from "@/components/ui/chart"
+import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 
 type graphProps = {
   data: {

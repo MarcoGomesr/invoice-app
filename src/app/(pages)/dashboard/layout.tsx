@@ -1,4 +1,3 @@
-import DashboardLinks from "./components/DashboardLinks"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -15,8 +14,9 @@ import { requireUser } from "@/lib/hooks"
 import { HandCoins, Menu, User2 } from "lucide-react"
 import Link from "next/link"
 import { redirect } from "next/navigation"
-import { ReactNode } from "react"
+import type { ReactNode } from "react"
 import { Toaster } from "sonner"
+import DashboardLinks from "./components/DashboardLinks"
 
 async function getUser(userId: string) {
   const data = await prisma.user.findUnique({

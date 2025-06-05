@@ -1,7 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import HeroImage from "@public/hero.png"
 import { RainbowButton } from "@/components/ui/magicui/rainbow-button"
+import HeroImage from "@public/hero.png"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Hero() {
   return (

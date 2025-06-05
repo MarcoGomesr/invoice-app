@@ -1,4 +1,3 @@
-import InvoiceList from "./InvoiceList"
 import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
@@ -8,6 +7,7 @@ import {
   CardTitle
 } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
+import InvoiceList from "./InvoiceList"
 
 import { PlusIcon } from "lucide-react"
 import Link from "next/link"

@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { HandCoins } from "lucide-react"
 import { RainbowButton } from "@/components/ui/magicui/rainbow-button"
+import { HandCoins } from "lucide-react"
+import Link from "next/link"
 
 export default function Navbar() {
   return (

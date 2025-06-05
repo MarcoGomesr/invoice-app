@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge"
 import {
   Table,
   TableBody,
@@ -6,12 +7,11 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table"
-import { InvoiceActions } from "./InvoiceActions"
 import { prisma } from "@/lib/db"
 import { requireUser } from "@/lib/hooks"
 import { formatCurrency } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
 import { EmptyState } from "../components/EmptyState"
+import { InvoiceActions } from "./InvoiceActions"
 
 async function getData(userId: string) {
   return await prisma.invoice.findMany({

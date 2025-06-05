@@ -1,11 +1,11 @@
-import { requireUser } from "@/lib/hooks"
-import Blocks from "./components/blocks"
 import InvoiceGraph from "@/app/(pages)/dashboard/components/InvoiceGraph"
-import RecenteInvoices from "./components/RecentInvoices"
-import { prisma } from "@/lib/db"
-import { EmptyState } from "./components/EmptyState"
-import { Suspense } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
+import { prisma } from "@/lib/db"
+import { requireUser } from "@/lib/hooks"
+import { Suspense } from "react"
+import { EmptyState } from "./components/EmptyState"
+import RecenteInvoices from "./components/RecentInvoices"
+import Blocks from "./components/blocks"
 
 async function getData(userId: string) {
   return await prisma.invoice.findMany({

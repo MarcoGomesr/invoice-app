@@ -1,4 +1,4 @@
-import { auth, signIn } from "@/lib/auth"
+import { SubmitButton } from "@/components/SubmitButton"
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { SubmitButton } from "@/components/SubmitButton"
+import { auth, signIn } from "@/lib/auth"
 import { redirect } from "next/navigation"
 
 export default async function LoginPage() {

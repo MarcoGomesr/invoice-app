@@ -1,5 +1,3 @@
-import { prisma } from "@/lib/db"
-import { Graph } from "./Graph"
 import {
   Card,
   CardContent,
@@ -7,8 +5,10 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
-import { InvoiceStatus } from "@prisma/client"
+import { prisma } from "@/lib/db"
 import { requireUser } from "@/lib/hooks"
+import { InvoiceStatus } from "@prisma/client"
+import { Graph } from "./Graph"
 
 async function getInvoices(userId: string) {
   const rawData = await prisma.invoice.findMany({
