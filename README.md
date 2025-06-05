@@ -1,7 +1,5 @@
 # InvoiceMarco - Modern Invoice Management System
 
-> **Note for AI Assistants:** This project uses `pnpm` as its package manager. Please check `package.json` and `pnpm-lock.yaml` to confirm package management details before suggesting any package-related commands.
-
 InvoiceMarco is a modern, full-stack invoice management application built with Next.js 15 and TypeScript. It provides a seamless experience for creating, managing, and sending professional invoices.
 
 ![InvoiceMarco Hero](public/hero.png)
